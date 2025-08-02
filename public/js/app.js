@@ -606,6 +606,12 @@ END:VCALENDAR`;
         document.getElementById('timerSeconds').value = '0';
     }
 
+    stopTimer() {
+        this.pauseTimer();
+        this.timerTime = 0;
+        this.updateTimerDisplay();
+    }
+
     updateTimerDisplay() {
         const hours = Math.floor(this.timerTime / 3600000);
         const minutes = Math.floor((this.timerTime % 3600000) / 60000);
@@ -993,6 +999,34 @@ END:VCALENDAR`;
         } catch (error) {
             console.error('Error saving configuration:', error);
             alert('Failed to save configuration');
+        }
+    }
+
+    async loadConfiguration(configId) {
+        if (!this.userToken) {
+            alert('Please log in to load configurations');
+            return;
+        }
+        
+        try {
+            const response = await fetch(`/api/configs/${configId}`, {
+                headers: {
+                    'Authorization': `Bearer ${this.userToken}`
+                }
+            });
+            
+            if (response.ok) {
+                const config = await response.json();
+                this.currentTimezones = config.timezones;
+                this.generateTimeline();
+                this.updateTimeline();
+                alert('Configuration loaded!');
+            } else {
+                alert('Failed to load configuration');
+            }
+        } catch (error) {
+            console.error('Error loading configuration:', error);
+            alert('Failed to load configuration');
         }
     }
 

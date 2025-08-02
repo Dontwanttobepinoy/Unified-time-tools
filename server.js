@@ -365,6 +365,27 @@ app.get('/api/configs', authenticateToken, (req, res) => {
   });
 });
 
+// Get specific configuration
+app.get('/api/configs/:id', authenticateToken, (req, res) => {
+  const userId = req.user.userId;
+  const configId = req.params.id;
+  
+  db.get("SELECT * FROM saved_configs WHERE id = ? AND user_id = ?", [configId, userId], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to get configuration' });
+    }
+    
+    if (!row) {
+      return res.status(404).json({ error: 'Configuration not found' });
+    }
+    
+    res.json({
+      ...row,
+      timezones: JSON.parse(row.timezones)
+    });
+  });
+});
+
 // Middleware to authenticate JWT token
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
