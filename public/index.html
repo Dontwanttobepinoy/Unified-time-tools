@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online time zone converter, world clock, and digital clock app. Convert UTC to IST, CST to IST, EST to IST, PST to IST. Features timer, stopwatch, and alarm functionality.">
+    <meta name="keywords" content="time zone converter, world clock, UTC to IST, CST to IST, EST to IST, PST to IST, digital clock, timer, stopwatch, alarm, time conversion">
+    <meta name="author" content="Unified Time Platform">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Unified Time Platform - World Clock & Time Zone Converter">
+    <meta property="og:description" content="Free online time zone converter with world clock, digital clock app, timer, stopwatch, and alarm. Convert UTC to IST, CST to IST, EST to IST, PST to IST.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Unified Time Platform - World Clock & Time Zone Converter">
+    <meta property="twitter:description" content="Free online time zone converter with world clock, digital clock app, timer, stopwatch, and alarm.">
+    <meta property="twitter:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <title>Unified Time Platform - World Clock & Time Zone Converter | UTC to IST, CST to IST, EST to IST</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preload" href="/js/app.js" as="script">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Unified Time Platform",
+        "description": "Free online time zone converter with world clock, digital clock app, timer, stopwatch, and alarm functionality",
+        "url": "https://yourdomain.com",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Time Zone Converter",
+            "World Clock",
+            "Digital Clock",
+            "Timer",
+            "Stopwatch",
+            "Alarm"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Unified Time Platform</h1>
+                    <p>World Clock & Time Zone Converter</p>
+                </div>
+                <nav class="nav">
+                    <button class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#converter" class="nav-link">Time Converter</a></li>
+                        <li><a href="#world-clock" class="nav-link">World Clock</a></li>
+                        <li><a href="#digital-clock" class="nav-link">Digital Clock</a></li>
+                        <li><a href="#reference" class="nav-link">Time Zones</a></li>
+                        <li><a href="#account" class="nav-link" id="accountLink">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Convert Time Zones Instantly</h2>
+                    <p>Free online time zone converter with world clock, digital clock app, timer, stopwatch, and alarm functionality.</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">🌍</span>
+                            <span>World Clock</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⏰</span>
+                            <span>Digital Clock</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⏱️</span>
+                            <span>Timer & Stopwatch</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🔔</span>
+                            <span>Alarm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Converter Section -->
+        <section class="quick-converter" id="converter">
+            <div class="container">
+                <h3>Quick Time Zone Converter</h3>
+                <div class="converter-grid">
+                    <div class="converter-card">
+                        <h4>UTC to IST</h4>
+                        <div class="converter-result" id="utcToIst">Loading...</div>
+                        <a href="#world-clock" class="btn btn-primary">Full Converter</a>
+                    </div>
+                    <div class="converter-card">
+                        <h4>CST to IST</h4>
+                        <div class="converter-result" id="cstToIst">Loading...</div>
+                        <a href="#world-clock" class="btn btn-primary">Full Converter</a>
+                    </div>
+                    <div class="converter-card">
+                        <h4>EST to IST</h4>
+                        <div class="converter-result" id="estToIst">Loading...</div>
+                        <a href="#world-clock" class="btn btn-primary">Full Converter</a>
+                    </div>
+                    <div class="converter-card">
+                        <h4>PST to IST</h4>
+                        <div class="converter-result" id="pstToIst">Loading...</div>
+                        <a href="#world-clock" class="btn btn-primary">Full Converter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- World Clock Section -->
+        <section class="world-clock" id="world-clock">
+            <div class="container">
+                <h3>Interactive World Clock</h3>
+                <div class="world-clock-controls">
+                    <div class="search-container">
+                        <input type="text" id="citySearch" placeholder="Search for a city..." class="search-input">
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
+                    <div class="clock-controls">
+                        <button class="btn btn-secondary" id="addLocation">+ Add Location</button>
+                        <button class="btn btn-secondary" id="timeFormat">24h</button>
+                        <button class="btn btn-secondary" id="showWeekends">Show Weekends</button>
+                    </div>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-header">
+                        <div class="location-header">Location</div>
+                        <div class="time-header" id="timeHeader">
+                            <!-- Hour headers will be generated here -->
+                        </div>
+                    </div>
+                    <div class="timeline-body" id="timelineBody">
+                        <!-- Timeline rows will be generated here -->
+                    </div>
+                </div>
+                <div class="timeline-controls" id="timelineControls" style="display: none;">
+                    <div class="selected-time" id="selectedTime"></div>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="shareEvent">Share Event</button>
+                        <button class="btn btn-secondary" id="addToCalendar">Add to Calendar</button>
+                        <button class="btn btn-secondary" id="copyLink">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Clock Section -->
+        <section class="digital-clock" id="digital-clock">
+            <div class="container">
+                <h3>Digital Clock App</h3>
+                <div class="clock-app">
+                    <div class="clock-display">
+                        <div class="current-time" id="currentTime">00:00:00</div>
+                        <div class="current-date" id="currentDate">January 1, 2024</div>
+                    </div>
+                    
+                    <div class="clock-tabs">
+                        <button class="tab-btn active" data-tab="clock">Clock</button>
+                        <button class="tab-btn" data-tab="timer">Timer</button>
+                        <button class="tab-btn" data-tab="stopwatch">Stopwatch</button>
+                        <button class="tab-btn" data-tab="alarm">Alarm</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- Clock Tab -->
+                        <div class="tab-pane active" id="clockTab">
+                            <div class="clock-settings">
+                                <label>
+                                    <input type="checkbox" id="showSeconds"> Show Seconds
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="showDate"> Show Date
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Timer Tab -->
+                        <div class="tab-pane" id="timerTab">
+                            <div class="timer-controls">
+                                <div class="time-input">
+                                    <input type="number" id="timerHours" min="0" max="23" value="0" placeholder="0">
+                                    <label>Hours</label>
+                                </div>
+                                <div class="time-input">
+                                    <input type="number" id="timerMinutes" min="0" max="59" value="0" placeholder="0">
+                                    <label>Minutes</label>
+                                </div>
+                                <div class="time-input">
+                                    <input type="number" id="timerSeconds" min="0" max="59" value="0" placeholder="0">
+                                    <label>Seconds</label>
+                                </div>
+                            </div>
+                            <div class="timer-display" id="timerDisplay">00:00:00</div>
+                            <div class="timer-buttons">
+                                <button class="btn btn-primary" id="startTimer">Start</button>
+                                <button class="btn btn-secondary" id="pauseTimer" disabled>Pause</button>
+                                <button class="btn btn-secondary" id="resetTimer">Reset</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Stopwatch Tab -->
+                        <div class="tab-pane" id="stopwatchTab">
+                            <div class="stopwatch-display" id="stopwatchDisplay">00:00:00.00</div>
+                            <div class="stopwatch-buttons">
+                                <button class="btn btn-primary" id="startStopwatch">Start</button>
+                                <button class="btn btn-secondary" id="pauseStopwatch" disabled>Pause</button>
+                                <button class="btn btn-secondary" id="resetStopwatch">Reset</button>
+                                <button class="btn btn-secondary" id="lapStopwatch">Lap</button>
+                            </div>
+                            <div class="lap-times" id="lapTimes"></div>
+                        </div>
+                        
+                        <!-- Alarm Tab -->
+                        <div class="tab-pane" id="alarmTab">
+                            <div class="alarm-list" id="alarmList">
+                                <div class="add-alarm">
+                                    <button class="btn btn-primary" id="addAlarm">+ Add Alarm</button>
+                                </div>
+                            </div>
+                            <div class="alarm-form" id="alarmForm" style="display: none;">
+                                <div class="form-group">
+                                    <label>Time:</label>
+                                    <input type="time" id="alarmTime" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Days:</label>
+                                    <div class="day-selector">
+                                        <label><input type="checkbox" value="1"> Mon</label>
+                                        <label><input type="checkbox" value="2"> Tue</label>
+                                        <label><input type="checkbox" value="3"> Wed</label>
+                                        <label><input type="checkbox" value="4"> Thu</label>
+                                        <label><input type="checkbox" value="5"> Fri</label>
+                                        <label><input type="checkbox" value="6"> Sat</label>
+                                        <label><input type="checkbox" value="0"> Sun</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Label:</label>
+                                    <input type="text" id="alarmLabel" placeholder="Alarm">
+                                </div>
+                                <div class="alarm-form-buttons">
+                                    <button class="btn btn-primary" id="saveAlarm">Save</button>
+                                    <button class="btn btn-secondary" id="cancelAlarm">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Time Zone Reference Section -->
+        <section class="timezone-reference" id="reference">
+            <div class="container">
+                <h3>Time Zone Reference</h3>
+                <div class="reference-grid">
+                    <div class="reference-card">
+                        <h4>Major Time Zones</h4>
+                        <div class="timezone-list" id="majorTimezones">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="reference-card">
+                        <h4>DST Information</h4>
+                        <div class="dst-info">
+                            <p>Daylight Saving Time (DST) is the practice of setting clocks forward one hour from standard time during the summer months.</p>
+                            <div class="dst-schedule">
+                                <h5>2024 DST Schedule:</h5>
+                                <ul>
+                                    <li><strong>Spring Forward:</strong> March 10, 2024 (US/Canada)</li>
+                                    <li><strong>Fall Back:</strong> November 3, 2024 (US/Canada)</li>
+                                    <li><strong>Europe Spring:</strong> March 31, 2024</li>
+                                    <li><strong>Europe Fall:</strong> October 27, 2024</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reference-card">
+                        <h4>Popular Conversions</h4>
+                        <div class="popular-conversions">
+                            <div class="conversion-item">
+                                <span>UTC to IST</span>
+                                <span>+5:30 hours</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span>CST to IST</span>
+                                <span>+11:30 hours</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span>EST to IST</span>
+                                <span>+10:30 hours</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span>PST to IST</span>
+                                <span>+13:30 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Section -->
+        <section class="account" id="account">
+            <div class="container">
+                <h3>Account</h3>
+                <div class="account-content">
+                    <div class="login-form" id="loginForm">
+                        <h4>Login</h4>
+                        <form id="loginFormElement">
+                            <div class="form-group">
+                                <label for="loginEmail">Email:</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password:</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                        <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+                    </div>
+                    
+                    <div class="register-form" id="registerForm" style="display: none;">
+                        <h4>Register</h4>
+                        <form id="registerFormElement">
+                            <div class="form-group">
+                                <label for="registerEmail">Email:</label>
+                                <input type="email" id="registerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password:</label>
+                                <input type="password" id="registerPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                    </div>
+                    
+                    <div class="user-dashboard" id="userDashboard" style="display: none;">
+                        <h4>Welcome, <span id="userEmail"></span></h4>
+                        <div class="saved-configs">
+                            <h5>Saved Configurations</h5>
+                            <div id="savedConfigsList"></div>
+                            <button class="btn btn-primary" id="saveCurrentConfig">Save Current Configuration</button>
+                        </div>
+                        <button class="btn btn-secondary" id="logout">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Unified Time Platform</h5>
+                    <p>Free online time zone converter with world clock, digital clock app, timer, stopwatch, and alarm functionality.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#converter">Time Converter</a></li>
+                        <li><a href="#world-clock">World Clock</a></li>
+                        <li><a href="#digital-clock">Digital Clock</a></li>
+                        <li><a href="#reference">Time Zones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Popular Conversions</h5>
+                    <ul>
+                        <li><a href="#converter">UTC to IST</a></li>
+                        <li><a href="#converter">CST to IST</a></li>
+                        <li><a href="#converter">EST to IST</a></li>
+                        <li><a href="#converter">PST to IST</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Unified Time Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
+</body>
+</html>
