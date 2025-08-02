@@ -15,6 +15,12 @@ const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 // Middleware
+app.use(compression());
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
+
+// Security middleware after static files
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -22,14 +28,16 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'"]
+      fontSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      baseUri: ["'self'"],
+      formAction: ["'self'"],
+      frameAncestors: ["'self'"],
+      upgradeInsecureRequests: []
     }
   }
 }));
-app.use(compression());
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
 
 // Database initialization
 const db = new sqlite3.Database('./timezone.db');
